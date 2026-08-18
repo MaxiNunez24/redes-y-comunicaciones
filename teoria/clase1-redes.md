@@ -45,7 +45,7 @@ Conjunto de reglas que especifican el intercambio de datos u órdenes durante la
 
 
 
-## Stack TPC / IP
+## Stack TPC / IP  (Transmission Control Protocol / Internet Protocol)
 Es un conjunto de protocolos a estudiar a lo largo de la materia porque es el que más se difundió en el mundo.
 ### Se compone de 4 capas:
 1. Capa de Aplicación
