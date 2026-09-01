@@ -65,4 +65,9 @@ Se pueden utilizar ambos protocolos IPv4 e IPv6 a la vez.
 
 ## Consultas
 - Se va a evaluar el saber los identificadores de las RFCs?
+Nop, es material adicional
+
 - Podría alguien no tener que depender de un proveedor de Internet y aún así acceder a toda la red?
+Sí, es posible a través de redes peer-to-peer o redes mesh.
+
+- Libro a usar: "Computer Networking: A Top-Down Approach" de Kurose y Ross. 7ma edición. 2017. Pearson.

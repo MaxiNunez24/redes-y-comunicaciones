@@ -1,0 +1,4 @@
+# Content Delivery Network
+Es una red de servidores distribuidos geográficamente que trabajan juntos para entregar contenido de manera rápida y eficiente a los usuarios finales. Su objetivo principal es reducir la latencia y mejorar la velocidad de carga de los sitios web y aplicaciones al acercar el contenido a los usuarios.
+
+Se podrían considerar servidores [Proxy](proxy.md), ya que actúan como intermediarios entre los usuarios y los servidores de origen, almacenando en caché el contenido y entregándolo desde ubicaciones más cercanas a los usuarios. Sin embargo, la principal diferencia es que un CDN está diseñado específicamente para optimizar la entrega de contenido estático y dinámico a nivel global, mientras que un servidor proxy puede tener múltiples propósitos, como filtrado de contenido, anonimato o control de acceso.
