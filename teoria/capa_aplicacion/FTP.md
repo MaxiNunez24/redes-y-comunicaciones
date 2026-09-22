@@ -1,0 +1,17 @@
+# File Transfer Protocol (FTP)
+## Introducción
+FTP (File Transfer Protocol) es un protocolo de red utilizado para transferir archivos entre un cliente y un servidor a través de una red TCP/IP, como Internet. FTP permite a los usuarios subir y descargar archivos, así como gestionar directorios y permisos en el servidor.   
+
+## Historia
+El protocolo FTP fue desarrollado en 1971 por Abhay Bhushan y publicado como RFC 114. Desde entonces, ha sido ampliamente utilizado para la transferencia de archivos en redes de computadoras. A lo largo de los años, se han desarrollado varias extensiones y mejoras al protocolo original, como FTPS (FTP Secure) y SFTP (SSH File Transfer Protocol), que ofrecen mayor seguridad y cifrado en la transferencia de archivos. A pesar de la aparición de otros protocolos de transferencia de archivos, como HTTP y HTTPS, FTP sigue siendo una opción popular para la transferencia de archivos debido a su simplicidad y compatibilidad con una amplia gama de sistemas operativos y aplicaciones.
+
+## Protocolos
+### FTP (File Transfer Protocol)
+FTP es el protocolo estándar para la transferencia de archivos entre un cliente y un servidor. Funciona en los puertos 20 y 21, donde el puerto 21 se utiliza para establecer la conexión de control y el puerto 20 se utiliza para la transferencia de datos. FTP permite a los usuarios autenticarse mediante un nombre de usuario y una contraseña, aunque también puede funcionar en modo anónimo, donde no se requiere autenticación. El protocolo FTP utiliza dos modos de transferencia: activo y pasivo. En el modo activo, el cliente establece la conexión de control y el servidor establece la conexión de datos. En el modo pasivo, el cliente establece ambas conexiones, lo que facilita la transferencia de archivos a través de firewalls y NAT (Network Address Translation).
+
+## FTPS (FTP Secure)
+FTPS es una extensión del protocolo FTP que añade soporte para cifrado mediante SSL/TLS (Secure Sockets Layer/Transport Layer Security). FTPS permite a los usuarios transferir archivos de manera segura, protegiendo la confidencialidad e integridad de los datos durante la transferencia. FTPS puede funcionar en modo explícito o implícito. En el modo explícito, el cliente solicita al servidor que inicie una conexión segura mediante el comando AUTH TLS o AUTH SSL. En el modo implícito, la conexión segura se establece automáticamente al conectarse al puerto 990, y todos los comandos y datos se cifran desde el inicio de la sesión. FTPS es compatible con la mayoría de los servidores y clientes FTP modernos, y es ampliamente utilizado en entornos empresariales y organizaciones que requieren transferencias de archivos seguras.
+
+
+## SFTP (SSH File Transfer Protocol)
+SFTP es un protocolo de transferencia de archivos que funciona sobre el protocolo SSH (Secure Shell). SFTP proporciona una forma segura de transferir archivos entre un cliente y un servidor, ya que todas las comunicaciones están cifradas y autenticadas mediante el protocolo SSH. A diferencia de FTP y FTPS, SFTP no utiliza puertos separados para la conexión de control y la transferencia de datos; en su lugar, utiliza un solo puerto (generalmente el puerto 22) para todas las operaciones. SFTP permite a los usuarios realizar operaciones de transferencia de archivos, así como gestionar directorios y permisos en el servidor. Es ampliamente utilizado en entornos donde la seguridad es una prioridad, como en la administración de servidores y la transferencia de datos confidenciales.
