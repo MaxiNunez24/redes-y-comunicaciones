@@ -1,5 +1,8 @@
 # HTTP 2
 
+## Video de Youtube explicativo de la cátedra
+https://www.youtube.com/watch?v=91aMypPvXtY&list=PLWRFVCdbvpAlQ4-pfw0oGWTqS7SsFcItc
+
 ## Agrega mejoras con respecto a HTTP 1.1
 Algunas de estas mejoras son:
 ### Multiplexación de streams: 

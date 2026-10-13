@@ -70,20 +70,21 @@ En TCP, los números de secuencia (SEQ) y los números de acuse de recibo (ACK) 
 ## Stop and Wait (SW)
 El protocolo Stop and Wait es un método simple de control de flujo y retransmisión utilizado en TCP. En este método, el emisor envía un segmento y espera un acuse de recibo (ACK) del receptor antes de enviar el siguiente segmento. Si no se recibe un ACK dentro de un tiempo determinado, el emisor retransmite el segmento. Este método garantiza la entrega confiable de datos, pero puede ser ineficiente en redes con alta latencia, ya que el emisor debe esperar a que el receptor confirme la recepción de cada segmento antes de enviar el siguiente.
 
-## Go Back-N (GBN) y Selective Repeat (SR)
+## Control de errores
+### Go Back-N (GBN) y Selective Repeat (SR)
 TCP utiliza mecanismos de control de flujo y retransmisión para garantizar la entrega confiable de datos. Dos de los algoritmos más comunes son Go Back-N (GBN) y Selective Repeat (SR):
 
 - **Go Back-N (GBN)**: En este algoritmo, el emisor puede enviar múltiples segmentos sin esperar un acuse de recibo, pero si se detecta un error en un segmento, el emisor retransmite ese segmento y todos los segmentos posteriores, incluso si algunos de ellos fueron recibidos correctamente. La ventana de envío se utiliza para controlar la cantidad de segmentos que el emisor puede enviar antes de recibir un acuse de recibo, a esta se le asigna un tamaño por cada conexión el cual puede ir variando en el transcurso de la conexión (Es dinámica). Este método es más eficiente que Stop and Wait, pero puede resultar en la retransmisión innecesaria de segmentos que ya fueron recibidos correctamente.
 
 - **Selective Repeat (SR)**: En este algoritmo, el emisor puede enviar múltiples segmentos sin esperar un acuse de recibo, y si se detecta un error en un segmento, solo se retransmite ese segmento específico, no todos los segmentos posteriores. Se debe de indicar al establecer la conexión el uso de SR (por si ambos admiten el algoritmo), por defecto siempre se utiliza GBN, y luego en cada segmento se indica si se utiliza GBN o SR indicando en la parte opcional del encabezado qué segmentos se deben retransmitir. Esto mejora la eficiencia de la comunicación, ya que solo se retransmiten los segmentos que realmente se perdieron o llegaron con errores. 
 
-## Detección de errores
+### Detección de errores
 TCP utiliza un mecanismo de detección de errores basado en el uso de sumas de verificación (checksums) para garantizar la integridad de los datos transmitidos. Cada segmento TCP incluye un campo de checksum en su encabezado, que se calcula a partir de los datos del segmento y algunos campos del encabezado. Cuando el receptor recibe un segmento, calcula el checksum nuevamente y lo compara con el valor recibido. Si los valores coinciden, se considera que el segmento se recibió correctamente; de lo contrario, se descarta el segmento y se solicita su retransmisión.
 
-### NAK (Negative Acknowledgment)
+#### NAK (Negative Acknowledgment)
 Es un concepto dentro del protocolo que no existe implícitamente como flag, pero se reconocen cuando se detectan 4 ACKs duplicados, lo que indica que un segmento se ha perdido o llegó con errores. En este caso, el emisor retransmite el segmento correspondiente sin esperar a que se agote el tiempo de espera (RTO). Esto permite una recuperación más rápida de los errores y mejora la eficiencia de la comunicación. 
 
-## Cálculo de RTO (Retransmission Timeout)
+#### Cálculo de RTO (Retransmission Timeout)
 El tiempo de espera para la retransmisión (RTO) es un parámetro crítico en TCP que determina cuánto tiempo debe esperar el emisor antes de retransmitir un segmento si no recibe un acuse de recibo (ACK) del receptor. El RTO se calcula utilizando el tiempo de ida y vuelta (RTT) estimado y su variación, lo que permite adaptarse a las condiciones cambiantes de la red. El cálculo del RTO se realiza mediante el siguiente algoritmo:
 1. Se mide el tiempo de ida y vuelta (RTT) para cada segmento enviado y recibido correctamente.
 2. Se calcula un promedio ponderado del RTT utilizando una constante de suavizado (α) para dar más peso a las mediciones recientes.
