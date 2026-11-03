@@ -24,7 +24,7 @@ Es una mejora de NAT que permite a múltiples dispositivos en una red privada co
 
 - Si otro dispositivo en la red privada (por ejemplo, 192.168.1.11) desea acceder a Internet, también se le asigna el mismo número de puerto único (por ejemplo, 203.0.113.1:8081).
 
-- Pero si otro dispositivo en la red privada (por ejemplo, 192.168.1.15) desea acceder a Internet con el mismo número de puerto (por ejemplo, 8080), se le asigna una dirección IP pública diferente (por ejemplo, 193.168.52) con el puerto 8080, ya que el firewall puede bloquear la conexión si se cambia el puerto y la IP. Esto para permitir que
+- Pero si otro dispositivo en la red privada (por ejemplo, 192.168.1.15) desea acceder a Internet con el mismo número de puerto (por ejemplo, 8080), se le asigna una dirección IP pública diferente (por ejemplo, 193.168.52) con el puerto 8080, ya que el firewall puede bloquear la conexión si se cambia el puerto y la IP. Esto para permitir que se pueda comunicar a Internet con el puerto correspondiente y que las respuestas sepan a qué dispositivo interno deben llegar.
 
 ## Tabla de Connection Tracking
 Es una tabla que mantiene un registro de todas las conexiones activas en una red que utiliza NAT o NAPT. Esta tabla permite al router o firewall realizar un seguimiento de las conexiones y asegurarse de que los paquetes entrantes se enruten correctamente a los dispositivos de la red privada. La tabla de Connection Tracking contiene información sobre las direcciones IP privadas y públicas, los números de puerto, el estado de la conexión y otros detalles relevantes.
