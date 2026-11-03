@@ -108,7 +108,8 @@ El encabezado TCP puede incluir campos opcionales que proporcionan información 
 
 - **Window Scale**: Permite ampliar el tamaño de la ventana de recepción más allá del límite de 16 bits, lo que es útil en redes de alta velocidad y baja latencia. Esto permite un mayor control de flujo y mejora el rendimiento de la comunicación. Se utilizan potencias de 2 para escalar el tamaño de la ventana, lo que permite un rango de valores más amplio y una mayor eficiencia en la transmisión de datos.
 
-- **MSS (Maximum Segment Size)**: Indica el tamaño máximo de segmento que el emisor está dispuesto a recibir, lo que ayuda a evitar la fragmentación de los datos y mejora la eficiencia de la transmisión.
+- **MSS (Maximum Segment Size)**: Indica el tamaño máximo de segmento que el emisor está dispuesto a recibir, lo que ayuda a evitar la fragmentación de los datos y mejora la eficiencia de la transmisión. Sólo va en los SYN, después no vuelve a aparecer, ya que se negocia al establecer la conexión. El valor de MSS se calcula restando el tamaño del encabezado IP y TCP del tamaño máximo de la unidad de transmisión (MTU) de la red.
+ - MTU = 1500 bytes (Ethernet) - 20 bytes (IP header) - 20 bytes (TCP header) = 1460 bytes (MSS)
 
 ## Pipelining
 El pipelining es una técnica utilizada en TCP para mejorar la eficiencia de la transmisión de datos. Permite al emisor enviar múltiples segmentos sin esperar a que se reciban los acuses de recibo (ACK) de cada uno. Esto reduce el tiempo de espera y aumenta el rendimiento de la comunicación, especialmente en redes con alta latencia. Se utiliza el encabezado de ventana de recepción para controlar la cantidad de datos que el receptor puede aceptar, evitando la saturación de la red y asegurando una comunicación eficiente. 
