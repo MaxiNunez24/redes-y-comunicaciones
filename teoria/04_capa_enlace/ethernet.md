@@ -10,7 +10,7 @@ Son las unidades de datos que se transmiten a través de la red Ethernet. Cada t
 1. **Preambulo**: Una secuencia de bits que permite a los dispositivos sincronizarse antes de la transmisión de datos.
 2. **Dirección MAC de destino**: La dirección física del dispositivo al que se envía la trama. Va antes que la dirección MAC de origen porque es necesario que el dispositivo receptor pueda identificar si la trama le pertenece o no.
 3. **Dirección MAC de origen**: La dirección física del dispositivo que envía la trama.
-4. **Tipo/Longitud**: Indica el tipo de protocolo de red que se está utilizando o la longitud de los datos en la trama.
+4. **Tipo/Longitud (ET)**: Indica el tipo de protocolo de red que se está utilizando o la longitud de los datos en la trama.
 5. **Datos**: La información que se está transmitiendo, que puede variar en tamaño dependiendo del protocolo y la aplicación.
 6. **FCS (Frame Check Sequence)**: Un campo de verificación que permite a los dispositivos detectar errores en la transmisión de datos.
 
